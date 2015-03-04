@@ -1,4 +1,8 @@
 #!/bin/sh
+
+
+# 0) Parse command-line arguments
+
 PROJECT_DIR=$1
 
 if [ "X$PROJECT_DIR" == "X" ]; then
@@ -6,13 +10,12 @@ if [ "X$PROJECT_DIR" == "X" ]; then
         exit 1
 fi
 
-# Parse command-line arguments
 PROJECT=$(basename $PROJECT_DIR)
 PROJECT=$(echo $PROJECT | tr '[A-Z]' '[a-z]')
 
 
 
-# 1) Create XCode project from kivy project.
+# 1) Create and build an XCode project from the kivy project.
 
 sudo rm -R /Users/robby/Desktop/apps/kivy-ios/app-$PROJECT
 ~/Desktop/apps/kivy-ios/tools/create-xcode-project.sh $PROJECT $PROJECT_DIR
