@@ -4,4 +4,4 @@ The script assumes iproxy is installed on the host machine (for ssh via usb).
 
 How to use:
 
-./kivyToApp3 /path/to/your/kivy/project
+./kivyToApp3.sh /path/to/your/kivy/project
